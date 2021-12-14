@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@android:color/black"
+        >
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabPostalCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Postal Code" />
+
+        <android.support.design.widget.TabItem
+        android:id="@+id/tabPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Position" />
+
+
+
+
+    </android.support.design.widget.TabLayout>
+
+    responseView
+
+    <Spinner
+        android:id="@+id/inputCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="12pt"
+        android:textColor="#FF8B1500"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter city name"
+        android:inputType="text"
+        android:textSize="10pt"
+        android:paddingStart="10dp" />
+
+    <Button
+        android:id="@+id/queryButton"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Search" />
+
+
+    <RelativeLayout
+        android:id="@+id/contenitorInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="15dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/responseView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="12sp"
+                android:linksClickable="true"
+                android:textSize="18sp" />
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
